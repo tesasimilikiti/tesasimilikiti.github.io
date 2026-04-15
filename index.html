@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CJWT Limited | Strategic Investment Holding</title>
+    <title>CJWT LIMITED | Strategic Private Holding</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        /* --- CSS VARIABLES & RESET --- */
         :root {
-            --primary: #1a1a1a;
-            --accent: #c5a059; /* Gold Metallic */
-            --bg-light: #fdfdfd;
-            --text-muted: #666;
+            --bg-dark: #0a0a0a;       /* Black Ebony */
+            --bg-card: #141414;       /* Slightly lighter black */
+            --primary-gold: #cda45e;  /* Soft Gold */
+            --text-main: #e0e0e0;     /* Off-white */
+            --text-muted: #a0a0a0;    /* Gray */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
         }
 
         * {
@@ -22,179 +27,358 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--primary);
-            line-height: 1.7;
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
 
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 0 40px;
+            padding: 0 30px;
         }
 
-        /* Navigation */
+        /* --- SCRIPT UTK ANIMASI SCROLL SEDERHANA --- */
+        html { scroll-behavior: smooth; }
+
+        /* --- HEADER / NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(205, 164, 94, 0.1);
+        }
+
         nav {
-            padding: 30px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 90px;
         }
 
         .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            letter-spacing: 4px;
-            text-decoration: none;
-            color: var(--primary);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: var(--primary);
-            margin-left: 40px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 600;
+            font-weight: 400;
+            color: var(--text-muted);
         }
 
-        /* Hero Section */
+        .nav-links a:hover {
+            color: var(--primary-gold);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
-            padding: 120px 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        /* Efek Garis Halus di Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(205, 164, 94, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(205, 164, 94, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-tagline {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            display: block;
         }
 
         .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 600;
+            background: linear-gradient(to right, #fff 20%, #cda45e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 40px;
-            letter-spacing: 1px;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 300;
         }
 
-        .divider {
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-            margin: 40px auto;
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Investment Strategy */
+        .btn:hover {
+            color: var(--bg-dark);
+            background-color: var(--primary-gold);
+            box-shadow: 0 0 20px rgba(205, 164, 94, 0.4);
+        }
+
+        /* --- ABOUT/PHILOSOPHY --- */
+        .philosophy {
+            padding: 140px 0;
+            position: relative;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-gold);
+            margin-bottom: 30px;
+        }
+
+        .philosophy-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .stamp {
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            color: rgba(205, 164, 94, 0.05);
+            position: absolute;
+            right: 10%;
+            top: 10%;
+            user-select: none;
+        }
+
+        /* --- STRATEGY SECTION --- */
         .strategy {
-            padding: 80px 0;
-            background: #fff;
+            padding: 140px 0;
+            background-color: var(--bg-card);
+            border-top: 1px solid rgba(205, 164, 94, 0.1);
+            border-bottom: 1px solid rgba(205, 164, 94, 0.1);
         }
 
-        .grid {
+        .section-header {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            margin-top: 50px;
+            gap: 40px;
         }
 
-        .card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--accent);
+        .stat-card {
+            background: rgba(255, 255, 255, 0.01);
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: var(--transition);
         }
 
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
+        .stat-card:hover {
+            border-color: rgba(205, 164, 94, 0.3);
+            transform: translateY(-10px);
+            background: rgba(205, 164, 94, 0.02);
         }
 
-        /* Footer */
-        footer {
-            padding: 100px 0 50px;
-            background: var(--primary);
+        .card-icon {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .stat-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
             color: #fff;
-            margin-top: 100px;
+            margin-bottom: 15px;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 100px 0 40px;
+            border-top: 1px solid rgba(205, 164, 94, 0.1);
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
             gap: 100px;
+            margin-bottom: 80px;
         }
 
-        .footer-info h4 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+        .footer-logo .logo { margin-bottom: 20px; display: inline-block; }
+        .footer-logo p { color: var(--text-muted); max-width: 400px; font-size: 0.9rem; }
+
+        .contact-info h4 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--primary-gold);
             margin-bottom: 20px;
-            color: var(--accent);
         }
 
-        .address-box {
-            border-left: 1px solid var(--accent);
-            padding-left: 20px;
+        .address {
+            color: var(--text-muted);
             font-size: 0.9rem;
-            opacity: 0.8;
+            font-style: normal;
         }
+
+        .address p { margin-bottom: 5px; }
 
         .copyright {
             text-align: center;
-            margin-top: 80px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            color: rgba(160, 160, 160, 0.4);
             letter-spacing: 1px;
-            opacity: 0.5;
+            text-transform: uppercase;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .grid-2, .grid-3 { gap: 30px; }
         }
 
         @media (max-width: 768px) {
-            .grid, .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Sederhana utk demo */
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+            .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+            .philosophy { padding: 80px 0; }
+            .strategy { padding: 80px 0; }
+            .section-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="container">
-            <a href="#" class="logo">CJWT</a>
-            <div class="nav-links">
-                <a href="#about">Philosophy</a>
-                <a href="#strategy">Strategy</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <h1>Strategic Asset Management</h1>
-            <p>CJWT Limited is a private holding company focused on long-term value creation through strategic investments and meticulous portfolio management.</p>
-            <div class="divider"></div>
+            <nav>
+                <a href="#" class="logo">CJWT</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Philosophy</a></li>
+                    <li><a href="#strategy">Strategy</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-tagline">Private Holding Company</span>
+            <h1>Cultivating Long-Term<br>Capital Growth</h1>
+            <p>CJWT Limited oversees a diverse portfolio of strategic investments, focused on wealth preservation and sustainable value creation across generations.</p>
+            <a href="#about" class="btn">Explore Our Vision</a>
+        </div>
+    </section>
+
+    <section class="philosophy" id="about">
+        <div class="stamp">EST. 2026</div>
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <div class="accent-line"></div>
+                    <h2 class="section-title">Our Investment Philosophy</h2>
+                </div>
+                <div class="philosophy-text">
+                    <p>CJWT Limited operates as a stetegic holding company, employing a disciplined approach to capital allocation. We partner with exceptional management teams to build enduring businesses.</p>
+                    <p>Our focus transcends short-term market volatility. We invest with a permanent capital base, allowing us to support long-term growth strategies and compound value over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="strategy" id="strategy">
         <div class="container">
-            <div class="grid">
-                <div class="card">
-                    <h3>Capital Growth</h3>
-                    <p>Focusing on high-potential sectors that offer sustainable growth and robust returns for our portfolio.</p>
+            <div class="section-header">
+                <div class="accent-line" style="margin: 0 auto 20px;"></div>
+                <h2 class="section-title">Core Pillars</h2>
+            </div>
+            
+            <div class="grid-3">
+                <div class="stat-card">
+                    <div class="card-icon">&#10024;</div> <h3>Asset allocation</h3>
+                    <p>Prudent diversification across asset classes and sectors to optimize risk-adjusted returns and preserve capital.</p>
                 </div>
-                <div class="card">
-                    <h3>Integrity</h3>
-                    <p>Operating with the highest level of corporate governance and ethical standards in all our holdings.</p>
+                
+                <div class="stat-card">
+                    <div class="card-icon">&#128109;</div> <h3>Active Partnership</h3>
+                    <p>Providing strategic guidance and resources to portfolio companies while maintaining operational autonomy for management.</p>
                 </div>
-                <div class="card">
-                    <h3>Long-term Vision</h3>
-                    <p>We invest with a decade-long horizon, ensuring stability and compound growth across cycles.</p>
+                
+                <div class="stat-card">
+                    <div class="card-icon">&#128336;</div> <h3>Generational Horizon</h3>
+                    <p>Decisions guided by long-term objectives, ensuring stability and sustainable growth for the future.</p>
                 </div>
             </div>
         </div>
@@ -203,19 +387,23 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-info">
-                    <h4>CJWT LIMITED</h4>
-                    <p>Registered Investment Holding Company</p>
+                <div class="footer-logo">
+                    <a href="#" class="logo">CJWT</a>
+                    <p>Strategic Investment Holding Company. Registered in England & Wales.</p>
                 </div>
-                <div class="address-box">
-                    <p>Office 30 Greenbox</p>
-                    <p>Westonhall Road, Stoke Prior</p>
-                    <p>Bromsgrove, B60 4AL</p>
-                    <p>United Kingdom</p>
+                <div class="contact-info">
+                    <h4>Registered Office</h4>
+                    <address class="address">
+                        <p>Office 30 Greenbox</p>
+                        <p>Westonhall Road, Stoke Prior</p>
+                        <p>Bromsgrove, B60 4AL</p>
+                        <p>United Kingdom</p>
+                    </address>
                 </div>
             </div>
+            
             <div class="copyright">
-                &copy; 2026 CJWT LIMITED. INCORPORATED IN ENGLAND & WALES.
+                &copy; 2026 CJWT LIMITED. All Rights Reserved. Company No. 16223456 (Demo).
             </div>
         </div>
     </footer>
