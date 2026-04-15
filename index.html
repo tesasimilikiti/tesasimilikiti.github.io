@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJWT Limited | Strategic Investment Holding</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059; /* Gold Metallic */
+            --bg-light: #fdfdfd;
+            --text-muted: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--primary);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            margin-left: 40px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 40px auto;
+        }
+
+        /* Investment Strategy */
+        .strategy {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 100px 0 50px;
+            background: var(--primary);
+            color: #fff;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
+
+        .footer-info h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .address-box {
+            border-left: 1px solid var(--accent);
+            padding-left: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .grid, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">CJWT</a>
+            <div class="nav-links">
+                <a href="#about">Philosophy</a>
+                <a href="#strategy">Strategy</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Strategic Asset Management</h1>
+            <p>CJWT Limited is a private holding company focused on long-term value creation through strategic investments and meticulous portfolio management.</p>
+            <div class="divider"></div>
+        </div>
+    </header>
+
+    <section class="strategy" id="strategy">
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <h3>Capital Growth</h3>
+                    <p>Focusing on high-potential sectors that offer sustainable growth and robust returns for our portfolio.</p>
+                </div>
+                <div class="card">
+                    <h3>Integrity</h3>
+                    <p>Operating with the highest level of corporate governance and ethical standards in all our holdings.</p>
+                </div>
+                <div class="card">
+                    <h3>Long-term Vision</h3>
+                    <p>We invest with a decade-long horizon, ensuring stability and compound growth across cycles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h4>CJWT LIMITED</h4>
+                    <p>Registered Investment Holding Company</p>
+                </div>
+                <div class="address-box">
+                    <p>Office 30 Greenbox</p>
+                    <p>Westonhall Road, Stoke Prior</p>
+                    <p>Bromsgrove, B60 4AL</p>
+                    <p>United Kingdom</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CJWT LIMITED. INCORPORATED IN ENGLAND & WALES.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
